@@ -4,10 +4,10 @@ const app = express();
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const apiKey = process.env.APIKEY;
-let country = 'USA'
-    let city = 'Statesville'
-    let state = 'North Carolina'
-    let url = `http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=${apiKey}`;
+// let country = 'USA'
+//     let city = 'Statesville'
+//     let state = 'North Carolina'
+//     let url = `http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=${apiKey}`;
 // template engine
 app.set('view engine', 'ejs');
 // turning info from the url to json
