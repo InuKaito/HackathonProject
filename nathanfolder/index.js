@@ -36,7 +36,7 @@ app.post('/', (req, res) => {
             }
             else {
                 // console.log(air.data.current.pollution);
-                let airText = `The air quality of ${air.data.city} is ${air.data.current.pollution.aqius} out of 500 which 500 is really bad air pollution`;
+                let airText = `The air quality of ${air.data.city} is ${air.data.current.pollution.aqius}`;
                 res.render('index', {air: airText, error : null});
             }
         }

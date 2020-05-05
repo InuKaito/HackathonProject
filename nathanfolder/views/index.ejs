@@ -16,14 +16,17 @@
           <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
           <input type="submit" class="ghost-button" value="Get Air">
         </form>
-        <% if(air !== null){ %>
-            <p><%= air %></p>
-          <% } %>
-  
-          <% if(air !== null){ %>
-            <p><%= error %></p>
-          <% } %>
+        <% if(weather !== null){ %>
+          <p><%= weather %></p>
+        <% } %>
+
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
       </fieldset>
+    </div>
+    <div class="img">
+      
     </div>
   </body>
 </html>
