@@ -1,0 +1,120 @@
+/* General */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Serif', serif;
+
+}
+
+
+/* Contact */
+
+#contactForm{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 100px 100px;
+}
+
+.formImage{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nature.jpeg') no-repeat;
+  background-size: cover;
+  width: 400px;
+  height: 600px;
+  padding: 50px 50px;
+  max-height: 100%;
+  color: white;
+  text-align: center;
+}
+
+form{
+  padding: 50px 50px;
+  background: darkslategray;
+  width: 400px;
+  height: 600px;
+  color: white;
+}
+
+#contactForm .contact-items{
+  margin-bottom: 20px;
+}
+
+#contactForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contactForm input,
+#contactForm textarea{
+  width: 100%;
+  padding: 10px;
+  border: 1px #ddd solid;
+}
+
+#contactForm textarea{
+  height: 200px;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus{
+  outline: none;
+  border-color: #053031 
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.btn{
+  background: lightseagreen;
+  padding: 10px 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.7s;
+}
+
+.btn:hover{
+  background: #053031;
+}
+
+.btn2{
+  background: url("paypal-donate-button.png") no-repeat;
+  background-size: cover;
+  width: 130px;
+  padding: 10px 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.7s;
+  border-radius: 50px;
+}
+
+/* .btn2:hover{
+  background: #053031;
+} */
+
+.buttons-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+  /* Media Queries */
+
+  @media screen and (max-width: 790px){
+    .formImage{      
+      width: 300px;
+      height: 600px;
+      padding: 20px 20px;
+    }
+  }
+
+  
