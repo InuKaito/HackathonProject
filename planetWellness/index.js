@@ -4,11 +4,6 @@ const app = express();
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const apiKey = process.env.APIKEY;
-// let country = 'USA'
-//     let city = 'Statesville'
-//     let state = 'North Carolina'
-//     let url = `http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=${apiKey}`;
-// template engine
 app.set('view engine', 'ejs');
 // turning info from the url to json
 app.use(bodyParser.urlencoded({extended : true}));
@@ -39,20 +34,50 @@ app.post('/', (req, res) => {
         }
     })
 });
-// request(url, function(err, response, body){
-//     if(err){
-//         console.log('error:', err);
-//     }
-//     else {
-//         // console.log('body:', body);
-//         let air = JSON.parse(body);
-//         let message = `It's ${air.data.country}`;
-//         console.log(message);
-//     }
-// });
+
 const port = process.env.PORT || 3000;
 app.listen(port, ()=> {
     console.log(`This server is running on ${port}`);
 })
+//Local API
 
-// app.use(express.static(__dirname + '/ressources'));
+let data = require('../planetWellness/public/js/users.json');
+
+
+
+app.get('/users', (req, res) => {
+    if(!data){
+        res.status(404).send('These are not the users you are looking for.')
+    }
+    res.send(data);
+});
+
+app.get('/users/:id', function(req,res) {
+    const sData = data.users.find(function(user){
+        console.log(user.id);
+
+        return parseInt(req.params.id) === user.id;
+    });
+
+    if(!sData){
+        res.status(404).send('These are not the users you are looking for.')
+    }
+
+    res.send(sData);
+});
+
+
+app.post('/users', (req,res) =>{ // the path is /users. the callback function with the parameters of req and res. 
+  // console.log(data)
+    const eData = {
+        id: data.users.length + 1, // grabbing the id by data.users but increasing the increment by 1 each time
+        name:req.body.name, 
+        lastName: req.body.lastName,
+        email: req.body.email  
+    }; 
+
+    
+    data.users.push(eData) // pushing the new information given by the user into the eData array.
+    res.send(eData) // responds by sending the eData object
+    
+})
