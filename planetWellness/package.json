@@ -1,7 +1,6 @@
 {
   "name": "planetwellness",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -15,5 +14,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Maya Caldeira",
-  "license": "MIT"
+  "license": "MIT",
+  "description": ""
 }

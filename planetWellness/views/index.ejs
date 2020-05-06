@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Pureza</title>
 </head>
 <body>
@@ -54,15 +54,21 @@
 <section id="Help">
 
   <div class="container">
+    
     <fieldset>
       <form action="/" method="post">
         <input name="country" type="text" class="ghost-input" placeholder="Enter a Country" required>
         <input name="state" type="text" class="ghost-input" placeholder="Enter a State" required>
         <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-        <input type="submit" class="ghost-button" value="Get Air">
-      </form>
-      <div id="air"></div>
-      
+        <input type="submit" class="ghost-button" value="Get Air" onclick="test()">
+        <% if(air !== null){ %>
+          <p><%= air %></p>
+        <% } %>
+    
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </form> 
     </fieldset>
   </div>
   <div class="img">
@@ -139,7 +145,43 @@
 
 
 
+    <script>
+      const hamburgerIcon = document.querySelector(".hamburger--container");
+const navBar = document.querySelector(".navbar");
 
-    <script src="script.js"></script>
+hamburgerIcon.addEventListener('click', () => {
+    navBar.classList.toggle("change")
+});
+
+// function prevent(e) {
+//   e.preventDefault();
+// };
+
+document.getElementById("submit").addEventListener("click", function(event){
+  event.preventDefault()
+}); 
+ 
+function validateForm() {
+    var name = document.forms["form"]["name"].value;
+    var lastName = document.forms["form"]["lastname"].value;
+    var email = document.forms["form"]["email"].value
+    if (name == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+    if (lastName == "") {
+        alert("Last name must be filled out");
+        return false;
+    }
+    if(email == ""){
+        alert("Email must be filled out");
+        return false;
+    }
+}
+
+function test() {
+  return alert("This is working");
+} 
+    </script>
 </body>
 </html>

@@ -12,14 +12,11 @@ const apiKey = process.env.APIKEY;
 app.set('view engine', 'ejs');
 // turning info from the url to json
 app.use(bodyParser.urlencoded({extended : true}));
-
 app.use(express.static('public'));
-
 // sends html and renders it on the client
 app.get('/', (req, res) => {
     res.render('index');
 });
-
 app.post('/', (req, res) => {
     let country = req.body.country
     let city = req.body.city
@@ -32,7 +29,7 @@ app.post('/', (req, res) => {
         else {
             let air = JSON.parse(body);
             if(air.data == undefined){
-                res.render('index', {air : null, error : 'Error please check your spelling'}); 
+                res.render('index', {air : null, error : 'Error please check your spelling'});
             }
             else {
                 // console.log(air.data.current.pollution);
@@ -42,24 +39,20 @@ app.post('/', (req, res) => {
         }
     })
 });
-
-
 // request(url, function(err, response, body){
 //     if(err){
 //         console.log('error:', err);
 //     }
 //     else {
 //         // console.log('body:', body);
-
 //         let air = JSON.parse(body);
 //         let message = `It's ${air.data.country}`;
 //         console.log(message);
 //     }
 // });
-
-
-
 const port = process.env.PORT || 3000;
 app.listen(port, ()=> {
     console.log(`This server is running on ${port}`);
 })
+
+// app.use(express.static(__dirname + '/ressources'));
