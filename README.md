@@ -4,7 +4,7 @@ Pureza is a project built to try to improve the big polution problem. We believe
 This application used Node.js, 3rd party API and also our own API
 
 # Getting Started
-Clone or download this repo onto your local machine. Once you have done this, install the node packages. You can do this by running npm i on your command line tool.
+Clone or download this repo onto your local machine. Once you have done this, install the node packages. You can do this by running npm i, npm i express, npm i request, and npm i body-parser on your command line tool.
 
 # Running the App
 After you have installed all of the dependencies that are needed for this project, you can open the project up through your command line tool. First be in the root of the directory and then run node index.js in your command line tool. This will start the app server, opening the application.
