@@ -1,4 +1,4 @@
-# HackathonProject
+# Pureza
 
 Pureza is a project built to try to improve the big polution problem. We believe in: Life, we aim preserve all forms of life on the planet; Unity, uniting nations to save the global community; Future, Setting present foundations for Future Generations. 
 This application used Node.js, 3rd party API and also our own API
